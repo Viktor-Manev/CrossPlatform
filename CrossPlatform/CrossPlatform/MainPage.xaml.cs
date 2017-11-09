@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace CrossPlatform
 {
 
- 
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
         public MainPage()
@@ -26,7 +26,6 @@ namespace CrossPlatform
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            
         }
 
     }

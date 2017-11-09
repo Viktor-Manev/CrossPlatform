@@ -14,7 +14,9 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <roxv:VideoView x:Name="videoview"   Grid.Row="0" Grid.Column="0" AutoPlay="True"  Source="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" FullScreen="True"  LoopPlay="True" ShowController="True">
+        <roxv:VideoView x:Name="videoview"   Grid.Row="0" Grid.Column="0" AutoPlay="True" 
+                        Source="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" 
+                        FullScreen="True" PositionInterval="2"   LoopPlay="True" ShowController="True">
 
         </roxv:VideoView>
     </Grid>
