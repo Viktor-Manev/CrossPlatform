@@ -19,11 +19,21 @@ namespace CrossPlatform.Droid
 
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+
+            try
+            {
+                global::Xamarin.Forms.Forms.Init(this, bundle);
+                LoadApplication(new App());
+            }
+            catch (Exception ex)
+            {
+
+               
+            }
+         
 
 
-
+            
 
         }
     }

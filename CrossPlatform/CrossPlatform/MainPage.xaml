@@ -3,22 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CrossPlatform"
              xmlns:roxv="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable"
+              xmlns:nativeControls="clr-namespace:CrossPlatform;assembly=CrossPlatform"
              x:Class="CrossPlatform.MainPage">
 
-    <Grid   ColumnSpacing="10" HorizontalOptions="Fill" BackgroundColor="Bisque" VerticalOptions="Fill" >
+    <Grid   ColumnSpacing="10" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="Fill" >
         <Grid.RowDefinitions>
             <RowDefinition Height="350"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*">
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-        <roxv:VideoView x:Name="videoview"   Grid.Row="0" Grid.Column="0" AutoPlay="True" 
-                        Source="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" 
-                        FullScreen="True" PositionInterval="2"   LoopPlay="True" ShowController="True">
+
+        <!--<roxv:VideoView x:Name="videoview" LoopPlay="False"  AutoPlay="False"  Grid.Row="0" Grid.Column="0"
+                         ShowController="True">
 
         </roxv:VideoView>
+-->
+        <nativeControls:VideoVideCustom Grid.Row="0" Grid.Column="0" x:Name="videoPlayler"></nativeControls:VideoVideCustom>
+        
+        <Image x:Name="imageID" Grid.Row="1" Grid.Column="0" >
+            
+        </Image>
+        
     </Grid>
    
 
