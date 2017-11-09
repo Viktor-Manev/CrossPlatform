@@ -5,16 +5,16 @@
              xmlns:roxv="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable"
              x:Class="CrossPlatform.MainPage">
 
-    <Grid  Padding="20" ColumnSpacing="10" HorizontalOptions="Fill" BackgroundColor="Bisque" VerticalOptions="Fill" >
+    <Grid   ColumnSpacing="10" HorizontalOptions="Fill" BackgroundColor="Bisque" VerticalOptions="Fill" >
         <Grid.RowDefinitions>
             <RowDefinition Height="350"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto">
+            <ColumnDefinition Width="*">
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <roxv:VideoView x:Name="videoview" HorizontalOptions="Center" VerticalOptions="Center"  Grid.Row="0" Grid.Column="0" AutoPlay="True"  Source="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" FullScreen="True"  LoopPlay="True" ShowController="True">
+        <roxv:VideoView x:Name="videoview"   Grid.Row="0" Grid.Column="0" AutoPlay="True"  Source="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" FullScreen="True"  LoopPlay="True" ShowController="True">
 
         </roxv:VideoView>
     </Grid>
