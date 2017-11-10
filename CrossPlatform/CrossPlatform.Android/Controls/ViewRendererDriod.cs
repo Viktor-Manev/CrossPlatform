@@ -17,19 +17,12 @@ using Android.Media;
 using Xamarin.Forms.Platform.Android;
 using Android.Graphics;
 
-[assembly: Xamarin.Forms.ExportRenderer(typeof(CrossPlatform.VideoVideCustom), typeof(CrossPlatform.Droid.VideoSourceDroid))]
+[assembly: Xamarin.Forms.ExportRenderer(typeof(CrossPlatform.VideoVideCustom), typeof(CrossPlatform.Droid.Controls.ViewRendererDriod))]
 namespace CrossPlatform.Droid.Controls
 {
-
-    public class MyView : Android.Views.View
-    {
-        public MyView() : base(Android.App.Application.Context)
-        {
-
-        }
-    }
+    
   
-  public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, MyView>
+  public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, ViewGroup>
     {
      
 

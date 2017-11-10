@@ -41,6 +41,7 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\ButtonRed.cs" />
     <Compile Include="interfaces\IVideoSource.cs" />
     <Compile Include="interfaces\VideoVideCustom.cs" />
     <Compile Include="MainPage.xaml.cs">

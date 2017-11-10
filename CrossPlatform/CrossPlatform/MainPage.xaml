@@ -21,9 +21,9 @@
 
         </roxv:VideoView>
 -->
-        <nativeControls:VideoVideCustom Grid.Row="0" Grid.Column="0" x:Name="videoPlayler"></nativeControls:VideoVideCustom>
+        <nativeControls:VideoVideCustom Grid.Row="1" Grid.Column="0" ></nativeControls:VideoVideCustom>
         
-        <Image x:Name="imageID" Grid.Row="1" Grid.Column="0" >
+        <Image x:Name="imageID" Grid.Row="0" WidthRequest="200" HeightRequest="150" Grid.Column="0" >
             
         </Image>
         
