@@ -22,37 +22,50 @@ namespace CrossPlatform.Droid.Controls
 {
     
   
-  public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, ViewGroup>
+  public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, VideoView>
     {
-     
 
-      
-            //if (Control == null)
-            //{
-            //    Android.Views.View v = new Android.Views.View(Android.App.Application.Context);
-            //    v.SetBackgroundColor(Android.Graphics.Color.Red);
-            //    SetNativeControl(v);
-            //}
-            
-            // MediaPlayer mediaPlayer = new MediaPlayer();
-            //LayoutInflater mInflater = (LayoutInflater)Android.Content.Context.LayoutInflaterService;
-            //mInflater.Inflate()
+        protected override void OnElementChanged(ElementChangedEventArgs<VideoVideCustom> e)
+        {
+            base.OnElementChanged(e);
 
-            //    var v = new SurfaceView(Android.App.Application.Context);
-            // var asset = Android.App.Application.Context.Assets;
+            if (Control == null)
+            {
+                VideoView videoView = new VideoView(Android.App.Application.Context);
 
-            //  AssetManager assets = asset;
-            //  string content;
+                MediaPlayer mp = new MediaPlayer();
+                
 
-            //  AssetFileDescriptor fd = asset.OpenFd("video");
+            }
+
+        }
+
+        //if (Control == null)
+        //{
+        //    Android.Views.View v = new Android.Views.View(Android.App.Application.Context);
+        //    v.SetBackgroundColor(Android.Graphics.Color.Red);
+        //    SetNativeControl(v);
+        //}
+
+        // MediaPlayer mediaPlayer = new MediaPlayer();
+        //LayoutInflater mInflater = (LayoutInflater)Android.Content.Context.LayoutInflaterService;
+        //mInflater.Inflate()
+
+        //    var v = new SurfaceView(Android.App.Application.Context);
+        // var asset = Android.App.Application.Context.Assets;
+
+        //  AssetManager assets = asset;
+        //  string content;
+
+        //  AssetFileDescriptor fd = asset.OpenFd("video");
 
 
 
-            // mediaPlayer.SetDataSource(fd.FileDescriptor, fd.StartOffset, fd.Length);
-            //  mediaPlayer.SetDisplay(v.Holder);
+        // mediaPlayer.SetDataSource(fd.FileDescriptor, fd.StartOffset, fd.Length);
+        //  mediaPlayer.SetDisplay(v.Holder);
 
 
-        
+
 
     }
 }
