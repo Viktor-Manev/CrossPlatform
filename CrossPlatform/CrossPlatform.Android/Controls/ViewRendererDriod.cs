@@ -20,22 +20,73 @@ using Android.Graphics;
 [assembly: Xamarin.Forms.ExportRenderer(typeof(CrossPlatform.VideoVideCustom), typeof(CrossPlatform.Droid.Controls.ViewRendererDriod))]
 namespace CrossPlatform.Droid.Controls
 {
-    
-  
-  public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, VideoView>
-    {
 
+
+   public class MyView : SurfaceView
+    {
+        public MyView(Context context) : base(context)
+        {
+        }
+    }
+
+
+    public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, MyView>, ISurfaceHolderCallback2
+    {
+        MediaPlayer mp;
+
+        public void SurfaceChanged(ISurfaceHolder holder, [GeneratedEnum] Format format, int width, int height)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void SurfaceCreated(ISurfaceHolder holder)
+        {
+            
+            mp.SetDisplay(holder);
+            Play();
+
+        }
+
+        private void Play()
+        {
+
+              AssetFileDescriptor fd = Android.App.Application.Context.Assets.OpenFd("video.mp4");
+              mp.SetDataSource(fd.FileDescriptor, fd.StartOffset, fd.Length);
+            mp.Prepare();
+            mp.Prepared += ((s,e) => 
+            {
+
+                mp.Start(); });
+        }
+
+        public void SurfaceDestroyed(ISurfaceHolder holder)
+        {
+        //    throw new NotImplementedException();
+        }
+
+        public void SurfaceRedrawNeeded(ISurfaceHolder holder)
+        {
+          //  throw new NotImplementedException();
+        }
+
+
+
+        MyView videoView;
         protected override void OnElementChanged(ElementChangedEventArgs<VideoVideCustom> e)
         {
             base.OnElementChanged(e);
 
             if (Control == null)
             {
-                VideoView videoView = new VideoView(Android.App.Application.Context);
+                MyView videoView = new MyView(Android.App.Application.Context);
+                videoView.Holder.AddCallback(this);
+                mp = new MediaPlayer();
+                SetNativeControl(videoView);
+            }
 
-                MediaPlayer mp = new MediaPlayer();
-                
-
+            if (e.NewElement != null)
+            {
+                //mp.SetDisplay(vide)
             }
 
         }
@@ -57,11 +108,6 @@ namespace CrossPlatform.Droid.Controls
         //  AssetManager assets = asset;
         //  string content;
 
-        //  AssetFileDescriptor fd = asset.OpenFd("video");
-
-
-
-        // mediaPlayer.SetDataSource(fd.FileDescriptor, fd.StartOffset, fd.Length);
         //  mediaPlayer.SetDisplay(v.Holder);
 
 
