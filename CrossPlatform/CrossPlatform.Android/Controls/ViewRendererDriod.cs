@@ -16,11 +16,11 @@ using System.IO;
 using Android.Media;
 using Xamarin.Forms.Platform.Android;
 using Android.Graphics;
+using Rox;
 
 [assembly: Xamarin.Forms.ExportRenderer(typeof(CrossPlatform.VideoVideCustom), typeof(CrossPlatform.Droid.Controls.ViewRendererDriod))]
 namespace CrossPlatform.Droid.Controls
 {
-
 
    public class MyView : SurfaceView
     {
@@ -30,9 +30,10 @@ namespace CrossPlatform.Droid.Controls
     }
 
 
-    public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, MyView>, ISurfaceHolderCallback2
+    public  class ViewRendererDriod : ViewRenderer<VideoVideCustom, Android.Views.SurfaceView>, ISurfaceHolderCallback2
     {
         MediaPlayer mp;
+        MediaController mc;
 
         public void SurfaceChanged(ISurfaceHolder holder, [GeneratedEnum] Format format, int width, int height)
         {
@@ -55,8 +56,10 @@ namespace CrossPlatform.Droid.Controls
             mp.Prepare();
             mp.Prepared += ((s,e) => 
             {
-
-                mp.Start(); });
+            
+                mp.Start();
+                mc.Show();
+            });
         }
 
         public void SurfaceDestroyed(ISurfaceHolder holder)
@@ -78,14 +81,19 @@ namespace CrossPlatform.Droid.Controls
 
             if (Control == null)
             {
-                MyView videoView = new MyView(Android.App.Application.Context);
+                videoView = new MyView(Android.App.Application.Context);
                 videoView.Holder.AddCallback(this);
                 mp = new MediaPlayer();
-                SetNativeControl(videoView);
+                mc = new MediaController(Context);
+                mc.SetAnchorView(videoView);
+                
+
+                SetNativeControl(mc.RootView);
             }
 
             if (e.NewElement != null)
             {
+                
                 //mp.SetDisplay(vide)
             }
 

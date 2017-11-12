@@ -103,7 +103,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AndroidVideo.cs" />
     <Compile Include="Controls\ViewRendererDriod.cs" />
+    <Compile Include="FileSystem\FileSystemDroid.cs" />
     <Compile Include="Implement\VideoSourceDroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

@@ -42,8 +42,10 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="interfaces\ButtonRed.cs" />
+    <Compile Include="interfaces\fileSysytem.cs" />
     <Compile Include="interfaces\IVideoSource.cs" />
     <Compile Include="interfaces\VideoVideCustom.cs" />
+    <Compile Include="interfaces\VideoViewNative.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
