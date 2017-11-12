@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.IO;
+using System.Threading.Tasks;
 
 namespace CrossPlatform.Files
 {
@@ -19,5 +20,10 @@ namespace CrossPlatform.Files
         void DeleteFile(string filename);
 
         string ReadAsset();
+
+        void SaveStream(string path, Stream stream);
+
+        string GetFilePath(string name);
+ 
     }
 }

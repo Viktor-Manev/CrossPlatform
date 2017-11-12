@@ -16,12 +16,12 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <!--<roxv:VideoView x:Name="videoview" LoopPlay="False"  AutoPlay="False"  Grid.Row="0" Grid.Column="0"
+        <roxv:VideoView x:Name="videoview" LoopPlay="False"  AutoPlay="False"  Grid.Row="1" Grid.Column="0"
                          ShowController="True">
 
         </roxv:VideoView>
--->
-        <nativeControls:VideoVideCustom Grid.Row="1" Grid.Column="0" ></nativeControls:VideoVideCustom>
+
+        <!--<nativeControls:VideoVideCustom Grid.Row="1" Grid.Column="0" ></nativeControls:VideoVideCustom>-->
         
         <Image x:Name="imageID" Grid.Row="0" WidthRequest="200" HeightRequest="150" Grid.Column="0" >
             

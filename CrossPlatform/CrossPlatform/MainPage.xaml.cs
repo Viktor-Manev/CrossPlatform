@@ -26,6 +26,12 @@ namespace CrossPlatform
             IFileSystemCommands fileSystem = DependencyService.Get<Files.IFileSystemCommands>();
             //videoview.Source = ImageSource.FromFile("CrossPlatform.LoginVideo.mp4");
 
+
+            // var s = NetUriLoad.Get("", fileSystem);
+
+
+            videoview.Source = ImageSource.FromFile(fileSystem.GetFilePath("videeoto.mp4"));
+
             // string src = DependencyService.Get<IVideoSource>().GetUri();
 
         }
@@ -34,12 +40,14 @@ namespace CrossPlatform
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            videoview.Start();
+            
         }
 
         async Task StartVide()
         {
             System.Diagnostics.Debug.WriteLine("Initiated");
-        
 
           
             return ;
@@ -51,17 +59,23 @@ namespace CrossPlatform
     {
 
 
-    public static async Task<string> Get(string uri)
-    {
-        string results = "N/A";
+        public static async Task<string> Get(string uri, IFileSystemCommands fileMan)
+        {
+            string results = "N/A";
 
             try
             {
+                System.Net.Http.HttpClient httpClient = new System.Net.Http.HttpClient();
+
+                var p = await httpClient.GetStreamAsync("http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4");
 
 
+                fileMan.SaveStream("videeoto.mp4", p);
 
-                return "qw";
+                return p.ToString();
             }
+            catch { return "qw"; }
+        }
     }
 
 }

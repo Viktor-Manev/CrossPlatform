@@ -58,7 +58,7 @@ namespace CrossPlatform.Droid.Controls
             {
             
                 mp.Start();
-                mc.Show();
+              //  mc.Show();
             });
         }
 
@@ -88,7 +88,7 @@ namespace CrossPlatform.Droid.Controls
                 mc.SetAnchorView(videoView);
                 
 
-                SetNativeControl(mc.RootView);
+                SetNativeControl(videoView);
             }
 
             if (e.NewElement != null)

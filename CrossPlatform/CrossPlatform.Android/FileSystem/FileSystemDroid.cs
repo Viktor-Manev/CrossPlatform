@@ -32,7 +32,9 @@ namespace CrossPlatform
             var path = CreatePathToFile(filename);
             using (StreamReader sr = File.OpenText(path))
             {
-                return await sr.ReadToEndAsync();
+                var result = await sr.ReadToEndAsync();
+                sr.Close();
+                return result;
             }
         }
 
@@ -75,6 +77,22 @@ namespace CrossPlatform
         public string ReadAsset()
         {
             return string.Empty;
+        }
+
+        public void SaveStream(string path, Stream stream)
+        {
+            using (var streaming = new FileStream(CreatePathToFile(path), FileMode.CreateNew, FileAccess.ReadWrite))
+            {
+                stream.CopyTo(streaming);
+
+                stream.Close();
+                streaming.Close();
+            }
+        }
+
+        public string GetFilePath(string name)
+        {
+            return CreatePathToFile(name);
         }
     }
 
