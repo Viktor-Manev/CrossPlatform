@@ -13,7 +13,7 @@ namespace CrossPlatform
         {
             InitializeComponent();
 
-            MainPage = new CrossPlatform.MainPage();
+            MainPage = new CrossPlatform.view.AppNavigation();
         }
 
         protected override void OnStart()

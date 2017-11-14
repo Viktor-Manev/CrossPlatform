@@ -50,6 +50,19 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\AppNavigation.xaml.cs">
+      <DependentUpon>AppNavigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\AppNavigationDetail.xaml.cs">
+      <DependentUpon>AppNavigationDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\AppNavigationMaster.xaml.cs">
+      <DependentUpon>AppNavigationMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\AppNavigationMenuItem.cs" />
+    <Compile Include="view\ListViewPageAlfa.xaml.cs">
+      <DependentUpon>ListViewPageAlfa.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -101,6 +114,30 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Melon_Logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\ListViewPageAlfa.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\AppNavigation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\AppNavigationMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\AppNavigationDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.38779\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.38779\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
