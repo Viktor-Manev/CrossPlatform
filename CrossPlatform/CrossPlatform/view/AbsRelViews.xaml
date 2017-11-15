@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPlatform.view.AbsRelViews">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Label RelativeLayout.XConstraint =
+      "{ConstraintExpression Type=RelativeToView,
+                             Property=Width,
+                             Factor=0.3,
+                             Constant=0}" Text="Welcome to Xamarin Forms!" />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
