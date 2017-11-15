@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Abstraction\MyCustomCell.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -60,8 +61,12 @@
       <DependentUpon>AppNavigationMaster.xaml</DependentUpon>
     </Compile>
     <Compile Include="view\AppNavigationMenuItem.cs" />
+    <Compile Include="view\BaseViewModel.cs" />
     <Compile Include="view\ListViewPageAlfa.xaml.cs">
       <DependentUpon>ListViewPageAlfa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\TablesTest.xaml.cs">
+      <DependentUpon>TablesTest.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="view\AppNavigationDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="view\TablesTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

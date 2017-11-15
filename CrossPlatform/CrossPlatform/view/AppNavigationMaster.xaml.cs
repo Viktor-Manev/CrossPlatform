@@ -36,7 +36,7 @@ namespace CrossPlatform.view
                     new AppNavigationMenuItem { Id = 0, Title = "Produtcs",TargetType = typeof(ListViewPageAlfa)},
                     new AppNavigationMenuItem { Id = 1, Title = "Page 2" },
                     new AppNavigationMenuItem { Id = 2, Title = "Page 3" ,  TargetType = typeof(MainPage) },
-                    new AppNavigationMenuItem { Id = 3, Title = "Page 4" },
+                    new AppNavigationMenuItem { Id = 3, Title = "Page 4" , TargetType = typeof(view.TablesTest) },
                     new AppNavigationMenuItem { Id = 4, Title = "Page 5" },
                 });
             }

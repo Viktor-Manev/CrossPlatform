@@ -27,15 +27,24 @@ namespace CrossPlatform
             //videoview.Source = ImageSource.FromFile("CrossPlatform.LoginVideo.mp4");
 
 
-             var s = NetUriLoad.Get("", fileSystem).GetAwaiter().GetResult();
+            Task.Run(async () =>  
+            {
+                  string filename =   await  NetUriLoad.Get("", fileSystem);
 
+                Device.BeginInvokeOnMainThread(()=> {
 
-           videoview.Source = ImageSource.FromFile(fileSystem.GetFilePath("filename"));
+                    videoview.Source = ImageSource.FromFile(filename);
+                      videoview.Start();
+                }
+                    );
+            });
+          
 
             //IVideoSource src = DependencyService.Get<IVideoSource>();
 
             //videoview.Source = ImageSource.FromFile(src.GetUri());
 
+            
 
         }
 
@@ -44,7 +53,7 @@ namespace CrossPlatform
         {
             base.OnAppearing();
 
-            videoview.Start();
+          
             
         }
 

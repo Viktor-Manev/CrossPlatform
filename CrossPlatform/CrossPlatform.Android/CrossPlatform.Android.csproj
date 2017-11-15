@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\AndroidVideo.cs" />
+    <Compile Include="Controls\NativeCellDroid.cs" />
     <Compile Include="Controls\ViewRendererDriod.cs" />
     <Compile Include="FileSystem\FileSystemDroid.cs" />
     <Compile Include="Implement\VideoSourceDroid.cs" />
@@ -117,6 +118,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\VideoRender.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ListItemLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

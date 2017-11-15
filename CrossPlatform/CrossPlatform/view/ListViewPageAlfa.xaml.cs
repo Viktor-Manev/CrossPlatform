@@ -35,6 +35,7 @@ namespace CrossPlatform.view
             };
 
             BindingContext = this;
+            
         }
 
         async void Handle_ItemTapped(object sender, SelectedItemChangedEventArgs e)
